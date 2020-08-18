@@ -1,0 +1,55 @@
+﻿<Window x:Class="AESEncryptDecrypt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AESEncryptDecrypt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="800">
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="0,5,0,0" Text="Enter Data you want to encrypt using AES : CBS 256bit"/>
+        <ScrollViewer Grid.Row="1">
+            <TextBox x:Name="EncryptTextBox" Height="100" AcceptsReturn="True" />
+        </ScrollViewer>
+
+        <TextBlock Grid.Row="2" Margin="0,5,0,5" Text="Enter secret key 32 character long"/>
+        <TextBox x:Name="SecretKey" Grid.Row="3" Height="40"/>
+
+        <TextBlock Grid.Row="4" Margin="0,5,0,5" Text="Enter IV key 16 character long"/>
+        <TextBox x:Name="IVKey" Grid.Row="5" Height="40"/>
+
+        <Button Grid.Row="6" Content="Encrypt" Width="150" Click="EncryptButtonClicked"/>
+
+        <TextBlock Grid.Row="8" Margin="0,5,0,5" Text="Enter Data you want to decrypt using AES : CBS 256bit"/>
+        <ScrollViewer Grid.Row="9">
+            <TextBox x:Name="DecryptTextBox"  Height="100" AcceptsReturn="True"/>
+        </ScrollViewer>
+
+        <TextBlock Grid.Row="10" Margin="0,5,0,5" Text="Make sure secret Key and IVkey are entered"/>
+
+        <Button Grid.Row="11" Content="Decrypt" Width="150" Click="DecryptButtonClicked"/>
+
+        <TextBlock Grid.Row="13" Margin="0,5,0,5" Text="Output"/>
+        <ScrollViewer Grid.Row="14">
+            <TextBox x:Name="OutputTextBox" Height="100" AcceptsReturn="True"/>
+        </ScrollViewer>
+
+    </Grid>
+</Window>
